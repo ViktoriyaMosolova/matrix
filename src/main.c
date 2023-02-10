@@ -3,15 +3,18 @@
 void print_matrix(matrix_t A);
 
 int main() {
-    matrix_t A;
-    s21_create_matrix(1, 1, &A);
-    for (int i = 0; i < A.rows; i++) {
-        for (int j = 0; j < A.columns; j++) {
-            A.matrix[i][j] = 11;
+    matrix_t A, B, result;
+    s21_create_matrix(10, 11, &A);
+    s21_create_matrix(10, 11, &B);
+    s21_create_matrix(10, 11, &result);
+    for (int i = 0; i < B.rows; i++) {
+        for (int j = 0; j < B.columns; j++) {
+             A.matrix[i][j] = 11;
+             B.matrix[i][j] = 11;
         }
     }
-    //s21_remove_matrix(&A);
-    print_matrix(A);
+    s21_sum_matrix(&A, &B, &result);
+    print_matrix(result);
 
     return 0;
 }
